@@ -90,35 +90,34 @@ which wrk
 Running 30s test @ http://localhost:8000/ping/
   1 threads and 20000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   768.96ms  291.34ms   1.21s    66.98%
-    Req/Sec     4.13k     1.18k    4.95k    88.80%
-  53179 requests in 30.05s, 7.81MB read
-  Socket errors: connect 0, read 0, write 0, timeout 49405
-  Non-2xx or 3xx responses: 53179
-Requests/sec:   1769.57
-Transfer/sec:    266.13KB
+    Latency     0.00us    0.00us   0.00us    -nan%
+    Req/Sec     4.21k     1.37k    5.42k    85.11%
+  20000 requests in 30.06s, 2.48MB read
+  Socket errors: connect 0, read 0, write 0, timeout 20000
+Requests/sec:    665.23
+Transfer/sec:     84.45KB
 ```
 
-1769 запросов в секунду - пока до результата далеко )))
+665.23 запросов в секунду - пока до результата далеко )))
 
 ### Запуск в 4 потока:
 
 ```shell
-Running 30s test @ http://localhost:8000/ping/
   4 threads and 20000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.73s   371.38ms   2.00s    89.21%
-    Req/Sec     2.93k     2.33k   11.66k    68.78%
-  243731 requests in 30.11s, 35.85MB read
-  Socket errors: connect 0, read 0, write 0, timeout 99112
-  Non-2xx or 3xx responses: 243731
-Requests/sec:   8095.93
-Transfer/sec:      1.19MB
+    Latency     1.36s   495.06ms   2.00s    59.62%
+    Req/Sec     2.85k     2.43k   12.72k    70.47%
+  187444 requests in 30.07s, 23.26MB read
+  Socket errors: connect 0, read 0, write 0, timeout 168480
+Requests/sec:   6234.22
+Transfer/sec:    792.20KB
 ```
 
-8095 запросов в секунду - уже ближе - но еще не целевой показатель
+6234.22 запросов в секунду - уже ближе - но еще не целевой показатель
 
 ## Промежуточный итог
 
 К сожалению на своей рабочей машине я не могу провести более нагруженный тест, однако, 
 имея результаты для 1 и 4 процессов, целевой показатель в 20к запросов в секунду кажется достижимым
+
+
